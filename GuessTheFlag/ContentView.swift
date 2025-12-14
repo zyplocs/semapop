@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    var countries = ["Estonia", "France", "Germany", "Ireland", "Italy",
-                     "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"]
-    var correctAnswer = Int.random(in: 0...2)
+    var countries: [String] = ["Estonia", "France", "Germany", "Ireland", "Italy",
+                     "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
+    var correctAnswer: Int = Int.random(in: 0...2)
     
     var body: some View {
         ZStack {
@@ -32,6 +32,9 @@ struct ContentView: View {
                         // flag was tapped
                     } label: {
                         Image(countries[number])
+                            .renderingMode(.original)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 2))
                     }
                 }
             }
