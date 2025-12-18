@@ -25,6 +25,8 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
+                Spacer()
+                
                 VStack {
                     Text("Tap the flag of")
                         .bold()
